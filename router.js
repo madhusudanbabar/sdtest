@@ -3,6 +3,7 @@ import Router from "vue-router";
 
 export function createRouter(ssrContext, createDefaultRouter, routerOptions) {
   const options = routerOptions || createDefaultRouter(ssrContext).options;
+  console.log(options);
 
   let routesDirectory = null;
 
@@ -51,6 +52,8 @@ export function createRouter(ssrContext, createDefaultRouter, routerOptions) {
       });
   }
 
+  console.log("new routes");
+  console.log(newRoutes);
   return new Router({
     ...options,
     routes: newRoutes
