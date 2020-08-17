@@ -61,13 +61,5 @@ export default {
   ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
-  },
-  proxy: {
-    '/sub-domain': {
-      target: 'sub-domain.krypto9.tk',
-      pathRewrite: {
-        '^/sub-domain' : '/'
-        }
-      }
     }
 }
