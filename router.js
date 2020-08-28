@@ -10,11 +10,18 @@ export function createRouter(ssrContext, createDefaultRouter, routerOptions) {
   if (process.server && ssrContext && ssrContext.nuxt && ssrContext.req) {
     const req = ssrContext.req;
 
+    //  todo: for better clarity change domainLevel to domainName
     const domainLevel = (req.headers.host.match(/\./g) || []).length + 1;
 
     // Get routes directory by hostname
+    console.log(`domain level ${ domainLevel }`);
+    //  for local testing :
+    //  level 1 = local host, level 2 = local sbdomain
+    
+    // for hosting 
+    //  level 2 = local host, level 3 = local sbdomain
 
-    routesDirectory = domainLevel > 2 ? "sub-domain" : "root-domain";
+    routesDirectory = domainLevel > 1 ? "sub-domain" : "root-domain";
     // Save to the object that will be sent to the client as inline-script
     ssrContext.nuxt.routesDirectory = routesDirectory;
   }

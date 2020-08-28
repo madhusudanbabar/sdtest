@@ -4,6 +4,7 @@
             hello there
         </h1>
         <h2>im index from sub domain</h2>
+        <nuxt-link to="/tbd"> tbd </nuxt-link>
     </div>
 </template>
 
